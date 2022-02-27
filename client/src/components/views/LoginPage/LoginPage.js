@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch} from 'react-redux'
 import { loginUser } from '../../../_actions/user_action';
 import {useNavigate} from 'react-router-dom';
+import quth from '../../../hoc/auth'
+
 function LoginPage() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -60,4 +62,4 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default quth(LoginPage, null)
