@@ -1,15 +1,16 @@
-import {useEffect} from 'react'
+import react, {useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {auth} from '../_actions/user_action'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (SpecificComponent, option, adminRoute = null) {
-    let navigate = useNavigate();
+   
     //null    =>  아무나 출입이 가능한 페이지
     //true    =>  로그인한 유저만 출입이 가능한 페이지
     //false   =>  로그인한 유저는 출입 불가능한 페이지
     function AuthenticationCheck() {
+        let navigate = useNavigate();
         const dispatch = useDispatch();
 
         useEffect(() => {
@@ -37,5 +38,5 @@ export default function (SpecificComponent, option, adminRoute = null) {
             <SpecificComponent />
         )
     }
-    return <AuthenticationCheck/>
+    return AuthenticationCheck
 }

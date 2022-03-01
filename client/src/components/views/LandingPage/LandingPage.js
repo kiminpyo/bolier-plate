@@ -1,7 +1,7 @@
 import React ,{useEffect} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import quth from '../../../hoc/auth'
+import auth from '../../../hoc/auth'
 function LandingPage() {
   let navigate = useNavigate(); 
   useEffect(() => {
@@ -35,4 +35,4 @@ function LandingPage() {
   )
 }
 
-export default quth(LandingPage, false);
+export default auth(LandingPage, null);
